@@ -1,38 +1,30 @@
 <?php
-// Ejercicio 1: Operaciones aritméticas básicas
-echo "<h2>Ejercicio 1: Operaciones aritméticas básicas</h2>";
+// Solicita al usuario que ingrese el precio y cantidad de tres productos diferentes.
+$precio1 = 30.00;
+$cantidad1 = 2;
 
-$numero1 = 10;
-$numero2 = 5;
+$precio2 = 20.00;
+$cantidad2 = 3;
 
-$suma = $numero1 + $numero2;
-$resta = $numero1 - $numero2;
-$multiplicacion = $numero1 * $numero2;
-$division = $numero1 / $numero2;
+$precio3 = 10.00;
+$cantidad3 = 4;
 
-echo "La suma de $numero1 y $numero2 es: $suma<br>";
-echo "La resta de $numero1 y $numero2 es: $resta<br>";
-echo "La multiplicación de $numero1 y $numero2 es: $multiplicacion<br>";
-echo "La división de $numero1 y $numero2 es: $division<br><br>";
+// Calcula el subtotal de la compra, que es la suma del precio de cada producto multiplicado por su cantidad.
+$subtotal = ($precio1 * $cantidad1) + ($precio2 * $cantidad2) + ($precio3 * $cantidad3);
 
-// Ejercicio 2: Concatenación de cadenas
-echo "<h2>Ejercicio 2: Concatenación de cadenas</h2>";
+// Calcula el monto de impuestos aplicado al subtotal.
+$impuesto = $subtotal * 0.18;
 
-$cadena1 = "Hola, ";
-$cadena2 = "soy un ";
-$cadena3 = "programador.";
+// Calcula el descuento aplicado al subtotal.(10%)
+$descuento = $subtotal * 0.10;
 
-$concatenacion = $cadena1 . $cadena2 . $cadena3;
+// Calcula el total final sumando el subtotal y el monto de impuestos, y restando el descuento aplicado.
+$totalFinal = $subtotal + $impuesto - $descuento;
 
-echo "La cadena concatenada es: $concatenacion<br><br>";
-
-// Ejercicio 3: Cálculo del área de un rectángulo
-echo "<h2>Ejercicio 3: Cálculo del área de un rectángulo</h2>";
-
-$longitud = 12;
-$ancho = 8;
-
-$area = $longitud * $ancho;
-
-echo "El área del rectángulo con longitud $longitud y ancho $ancho es: $area<br>";
+// Mostrar los resultados en soles
+echo "Subtotal de la compra: S/" . number_format($subtotal, 2) . "<br>";
+echo "Monto de impuestos (18%): S/" . number_format($impuesto, 2) . "<br>";
+echo "Descuento aplicado (10%): -S/" . number_format($descuento, 2) . "<br>";
+echo "Total final de la compra: S/" . number_format($totalFinal, 2) . "<br>";
 ?>
+
